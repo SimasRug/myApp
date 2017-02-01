@@ -1,0 +1,24 @@
+{
+  "name": "myapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SimasRug/myApp.git"
+  },
+  "author": "Simonas Rugevicius",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SimasRug/myApp/issues"
+  },
+  "homepage": "https://github.com/SimasRug/myApp#readme",
+  "dependencies": {
+    "angular": "^1.6.1",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1"
+  }
+}

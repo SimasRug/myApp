@@ -1,0 +1,2 @@
+Check processing from input AFTER validation
+Finished at creating controllers
