@@ -1,11 +1,13 @@
-(function () {
+//(function () {
+// is there an alternaive for this, besides declaring the module
+// outside the anonymous function?
 
-var myApp = angular.module('myApp', ['ngRoute'])
+var myApp = angular.module('myApp', ['ngRoute']);
 
 // atach .config straight to module, then when routing divide
 // controllers for views
 // also user $routeProvider its a component of ngRoute
-  .config(['$routeProvider', function($routeProvider){
+  myApp.config(['$routeProvider', function($routeProvider){
 
     $routeProvider
       .when( '/login', {
@@ -26,4 +28,4 @@ var myApp = angular.module('myApp', ['ngRoute'])
   }]);
 
 
-})();
+// })();
