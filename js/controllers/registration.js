@@ -1,4 +1,7 @@
+(function(){
 myApp.controller('RegistrationController', ['$scope', function($scope) {
-$scope.regWelcome = 'welcome to register';
+// $scope.user = { email: 'example@mail.com',
+//                 password:'pass'};
 $scope.logWelcome = 'welcome to login'
 }]);
+})();

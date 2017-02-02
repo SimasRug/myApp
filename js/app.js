@@ -1,8 +1,8 @@
-//(function () {
+(function (window) { // pass a variable through the function then it works
 // is there an alternaive for this, besides declaring the module
 // outside the anonymous function?
 
-var myApp = angular.module('myApp', ['ngRoute']);
+ window.myApp = angular.module('myApp', ['ngRoute']);
 
 // atach .config straight to module, then when routing divide
 // controllers for views
@@ -28,4 +28,4 @@ var myApp = angular.module('myApp', ['ngRoute']);
   }]);
 
 
-// })();
+})(window);

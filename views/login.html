@@ -1,1 +1,33 @@
-{{logWelcome}}
+<section>
+
+  <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3">Login to enter the App</h1>
+    <p class="lead text-center" ng-show="loginForm.$invalid && loginForm.$touched">Enter valid data to login</p>
+  </div>
+</div>
+  {{loginForm.$touched}}
+  <form id="loginForm" name="loginForm" novalidate>
+
+    <!-- <fieldset> -->
+    <div class="form-group">
+      <label for="formGroupExampleInput">Email Adress</label>
+      <input type="email" name="email" placeholder="Email Adress" class="form-control"
+        ng-model="user.email" ng-required="true">
+      <p ng-show="loginForm.email.$invalid && loginForm.email.$touched"> Must be valid email</p>
+    </div>
+
+    <div class="form-group">
+      <label for="formGroupExampleInput">Password</label>
+      <input type="password" name="password" placeholder="Password" class="form-control"
+      ng-model="user.password" ng-required="true">
+      <p ng-show="loginForm.password.$invalid && loginForm.password.$touched">Enter password</p>
+    </div>
+
+    <!-- </fieldset> -->
+
+    <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+    <p class="text-center">or <a href="#/register">register</a></p>
+  </form>
+
+</section>
