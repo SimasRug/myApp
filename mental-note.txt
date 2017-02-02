@@ -1,2 +1,1 @@
-Check processing from input AFTER validation
-Finished at validation
+Finished at authentication events
