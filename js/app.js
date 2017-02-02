@@ -19,7 +19,7 @@
         controller:'RegistrationController'
       })
       .when('/logedin', {
-        templateUrl: 'views/logedin.html',
+        templateUrl: 'views/logedIn.html',
         controller: 'LogedInController'
       })
       .otherwise({

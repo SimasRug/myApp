@@ -1,6 +1,6 @@
 (function () {
 
-myApp.controller('LogedInCotroller', ['$scope', function($scope) {
+myApp.controller('LogedInController', ['$scope', function($scope) {
 $scope.logedin = 'Your logged in, welcome';
 }]);
 

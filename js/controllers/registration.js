@@ -2,7 +2,7 @@
 myApp.controller('RegistrationController',
  ['$scope', 'Authentication', function($scope, Authentication) {
 
-  //  $scope.user = { firstName:'bob', lastName: 'bobson', email: 'example@mail.com', password:'test123', };
+  $scope.user = { firstName:'bob', lastName: 'bobson', email: 'example@mail.com', password:'test123', };
 
 
 
