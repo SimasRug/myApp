@@ -15,6 +15,21 @@
     <script src="node_modules\angular-route\angular-route.min.js"></script>
 
 
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCZG1_nILUI0NUKK_4t8HgOgVK1ScFXosk",
+        authDomain: "myapp-c84b3.firebaseapp.com",
+        databaseURL: "https://myapp-c84b3.firebaseio.com",
+        storageBucket: "myapp-c84b3.appspot.com",
+        messagingSenderId: "267762780749"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script src="node_modules\angularfire\dist\angularfire.min.js"></script>
+
     <script src="js/app.js"></script>
     <script src="js/controllers/registration.js"></script>
     <script src="js/controllers/LogedIn.js"></script>

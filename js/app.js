@@ -2,7 +2,7 @@
 // is there an alternaive for this, besides declaring the module
 // outside the anonymous function?
 
- window.myApp = angular.module('myApp', ['ngRoute']);
+ window.myApp = angular.module('myApp', ['ngRoute', 'firebase']);
 
 // atach .config straight to module, then when routing divide
 // controllers for views
