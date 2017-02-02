@@ -16,6 +16,16 @@
           user.password
         ).then(function(regUser) {
           // calls a promisse in a success case
+          var regRef = ref.child('users') // this is used for basiclly adding more info about the user to the DB for certain uses in the app
+          .child(regUser.uid).set({ // the value in child can be anythig from the user object its personal prefrence
+            date: firebase.database.ServerValue.TIMESTAMP,
+            regUser: regUser.uid,
+            firstName: user.firstName,
+            lastName: user.lastName,
+            email: user.email
+            //this data is passed through controller then passed in the function above thats how it gets here
+          });
+
           $rootScope.message = user.firstName + ', thanks for registering';
         }).catch(function(error) {
           // for catching errors
