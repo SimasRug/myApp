@@ -1,4 +1,4 @@
-#loginForm {
+#loginForm , #registerForm {
   padding: 20px;
 }
 
@@ -7,4 +7,12 @@ input.ng-touched.ng-valid {
 }
 input.ng-touched.ng-invalid {
   border: 1px solid red !important;
+}
+
+.ng-invalid .btn {
+  background-color: grey;
+}
+.validationText {
+  color: red;
+  text-size:20px;
 }
