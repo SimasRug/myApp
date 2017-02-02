@@ -19,11 +19,11 @@
         controller:'RegistrationController'
       })
       .when('/logedin', {
-        templateUrl: 'views/logedin',
-        controller: 'LogedInCotroller'
+        templateUrl: 'views/logedin.html',
+        controller: 'LogedInController'
       })
       .otherwise({
-        redirectTo: 'login'
+        redirectTo: '/login'
       });
   }]);
 
