@@ -1,14 +1,26 @@
 (function() {
-  myApp.factory('Authentication', ['$rootScope','$location', '$firebaseAuth', function ($rootScope, $location, $firebaseAuth) {
+  myApp.factory('Authentication', ['$rootScope','$location','$firebaseObject', '$firebaseAuth', function ($rootScope, $location, $firebaseObject, $firebaseAuth) {
 
     var ref = firebase.database().ref(); // refrence to the database
     var auth = $firebaseAuth(); // used for authentication
+
+    auth.$onAuthStateChanged(function(authUser) {
+      if(authUser) {
+        var userRef = ref.child('users').child(authUser.uid);
+        var userObject = $firebaseObject(userRef); // basiclly getting all the info about the user using firebaseObject
+        $rootScope.currentUser = userObject;
+        console.log($rootScope.currentUser);
+      } else {
+        $rootScope.currentUser = '';
+        console.log($rootScope.currentUser);
+      }
+    })
 
     return {
       login: function (user) {
         auth.$signInWithEmailAndPassword(user.email, user.password)
           .then(function(user) {
-            // $rootScope.message = 'Seccesfull login';
+            $rootScope.message = 'Seccesfull login';
             $location.path('/logedin');
           })
           .catch(function (error) {
