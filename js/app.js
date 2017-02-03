@@ -2,7 +2,7 @@
 // is there an alternaive for this, besides declaring the module
 // outside the anonymous function?
 
- window.myApp = angular.module('myApp', ['ngRoute', 'firebase']);
+ window.myApp = angular.module('myApp', ['ngRoute', 'firebase', 'ngAnimate']);
 
 
  myApp.run(['$rootScope', '$location', function($rootScope, $location){

@@ -10,10 +10,10 @@
         var userRef = ref.child('users').child(authUser.uid);
         var userObject = $firebaseObject(userRef); // basiclly getting all the info about the user using firebaseObject
         $rootScope.currentUser = userObject;
-         console.log($rootScope.currentUser);
+        //  console.log($rootScope.currentUser);
       } else {
         $rootScope.currentUser = '';
-         console.log($rootScope.currentUser);
+        //  console.log($rootScope.currentUser);
       }
     });
 

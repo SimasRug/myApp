@@ -33,3 +33,4 @@ input.ng-touched.ng-invalid {
   color: red;
   text-size:20px;
 }
+.ng-cloak { display: none !important; }
