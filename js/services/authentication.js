@@ -32,6 +32,10 @@
         return auth.$signOut();
       },
 
+      requireAuth: function(){
+        return auth.$requireSignIn(); // returns true or false, depending on logged in status
+      },
+
       register: function(user) {
         auth.$createUserWithEmailAndPassword(
           // passing values got from the input fields

@@ -13,7 +13,6 @@ myApp.controller('RegistrationController',
 
   $scope.logout = function() {
     Authentication.logout();
-    console.log('Called');
   };
 
   $scope.register = function() {
