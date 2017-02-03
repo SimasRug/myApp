@@ -6,15 +6,15 @@
 
 
  myApp.run(['$rootScope', '$location', function($rootScope, $location){
-
    $rootScope.$on('$routeChangeError', function(event, next, previous, error) {
      if( error = 'AUTH_REQUIRED') {
        $rootScope.message = 'You must be loged in';
        $location.path('/login');
      }
-   })
-
+   });
  }]);
+
+
 
 // atach .config straight to module, then when routing divide
 // controllers for views
@@ -24,11 +24,21 @@
     $routeProvider
       .when( '/login', {
         templateUrl: 'views/login.html',
-        controller: 'RegistrationController'
+        controller: 'RegistrationController',
+        resolve:{
+          removeAuth: function(Authentication) {
+            return Authentication.logout();
+          }
+        }
       })
       .when('/register', {
         templateUrl: 'views/register.html',
-        controller:'RegistrationController'
+        controller:'RegistrationController',
+        resolve:{
+          removeAuth: function(Authentication) {
+            return Authentication.logout();
+          }
+        }
       })
       .when('/logedin', {
         templateUrl: 'views/logedIn.html',
@@ -40,7 +50,7 @@
         }
       })
       .otherwise({
-        redirectTo: '/login'
+        redirectTo: '/logedin'
       });
   }]);
 

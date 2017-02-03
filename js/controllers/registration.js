@@ -5,8 +5,6 @@ myApp.controller('RegistrationController',
   // $scope.user = { firstName:'bob', lastName: 'bobson', email: 'example@mail.com', password:'test123', };
 
 
-
-
   $scope.login = function() {
     Authentication.login($scope.user);
   };
