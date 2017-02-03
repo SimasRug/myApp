@@ -28,6 +28,10 @@
           });
       },
 
+      logout: function() {
+        return auth.$signOut();
+      },
+
       register: function(user) {
         auth.$createUserWithEmailAndPassword(
           // passing values got from the input fields

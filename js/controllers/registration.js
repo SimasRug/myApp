@@ -11,6 +11,11 @@ myApp.controller('RegistrationController',
     Authentication.login($scope.user);
   };
 
+  $scope.logout = function() {
+    Authentication.logout();
+    console.log('Called');
+  };
+
   $scope.register = function() {
     Authentication.register($scope.user);
   };
