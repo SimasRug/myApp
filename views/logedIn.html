@@ -14,4 +14,13 @@
 
   </form>
 
+  <div class="row">
+    <div class="col-md-12">
+      <div class="meeting" ng-repeat="(key, meeting) in meetings">
+        {{meeting.name}}
+        <button class="btn btn-danger" ng-click="deleteMeeting(key)">Delete</button>
+      </div>
+    </div>
+  </div>
+
 </section>

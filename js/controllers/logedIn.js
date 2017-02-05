@@ -13,10 +13,11 @@ myApp.controller('LogedInController',
       if(authUser) {
         var meetingsRef = ref.child('users').child(authUser.uid).child('meetings');
         var meetingsInfo = $firebaseArray(meetingsRef);
-        console.log(meetingsInfo);
-        console.log(authUser.uid);
+
+        $scope.meetings = meetingsInfo;
+
+
         $scope.addMeeting = function() {
-          console.log('a');
           meetingsInfo.$add({
             name: $scope.meetingName,
             date: firebase.database.ServerValue.TIMESTAMP
@@ -24,6 +25,10 @@ myApp.controller('LogedInController',
              $scope.meetingName = '';
           });
         };
+
+        $scope.deleteMeeting = function(key) {
+          meetingsInfo.$remove(key);
+        }
       }
     });
 
