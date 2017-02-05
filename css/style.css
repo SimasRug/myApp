@@ -1,4 +1,4 @@
-#loginForm , #registerForm {
+#loginForm , #registerForm, #addForm {
   padding: 20px;
 }
 .navbar {
@@ -28,6 +28,7 @@ input.ng-touched.ng-invalid {
 
 .ng-invalid .btn {
   background-color: grey;
+  border-color: grey;
 }
 .validationText {
   color: red;

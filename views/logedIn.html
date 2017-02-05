@@ -1,3 +1,17 @@
+<section>
 
-{{message}}
-<h3 class="text-center">{{success}}</h3>
+  <form id="addForm" name="addForm" ng-submit="addMeeting()" novalidate>
+
+    <h1>Add Meeting</h1>
+    <div class="input-group">
+      <input type="text" name="meetingName" placeholder="Add meeting" class="form-control"
+      ng-model="meetingName" ng-required="true">
+      <span class="input-group-btn">
+        <button class="btn btn-success" type="submit"
+          ng-disabled="addForm.$invalid">+</button>
+      </span>
+    </div>
+
+  </form>
+
+</section>

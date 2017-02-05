@@ -1,1 +1,1 @@
-Finished at authentication events
+Why make a new firebase DB???
