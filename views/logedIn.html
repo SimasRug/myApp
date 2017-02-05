@@ -19,6 +19,7 @@
       <div class="meeting" ng-repeat="(key, meeting) in meetings">
         {{meeting.name}}
         <button class="btn btn-danger" ng-click="deleteMeeting(key)">Delete</button>
+        <a href="#!/chekins/{{currentUser.regUser}}/{{meeting.$id}}" class="btn btn-primary"> Chekin</a>
       </div>
     </div>
   </div>

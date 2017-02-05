@@ -49,6 +49,15 @@
           }
         }
       })
+      .when('/chekins/:uId/:mId',{
+          templateUrl: 'views/chekins.html',
+          controller: 'ChekinsController',
+          resolve: {
+            currentAuth: function(Authentication) {
+              return Authentication.requireAuth();
+            }
+          }
+      })
       .otherwise({
         redirectTo: '/logedin'
       });
