@@ -1,0 +1,9 @@
+<section>
+  <ul ng-repeat="chekin in chekins">
+    <li>
+      <button class="btn btn-danger" ng-click="deleteChekin(chekin.$id)">Delete</button>
+      {{chekin.firstName}} {{chekin.lastName}}
+      {{chekin.data | date: "dd MMM, yyyy h:mm a" }}
+    </li>
+  </ul>
+</section>
