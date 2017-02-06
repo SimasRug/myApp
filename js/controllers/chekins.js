@@ -6,11 +6,11 @@ myApp.controller('ChekinsController',
 
     var ref, chekinsList;
 
-    // $scope.user = {
-    //   firstName: 'test',
-    //   lastName: 'test',
-    //   email: 'test@test.com'
-    // }
+    $scope.user = {
+      firstName: 'test',
+      lastName: 'test',
+      email: 'test@test.com'
+    }
 
     $scope.order = "data";
     $scope.direction = 'reverse';
