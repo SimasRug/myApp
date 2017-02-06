@@ -16,16 +16,34 @@
       <input type="radio" id="dirdescending" name="direction" ng-model="direction" value="reverse">
       <label for="dirdescending">desc</label>
     </div>
-    <button class="btn btn-primary pull-right" type="button" name="button" ng-hide="recordId" ng-click="pickRandom()" >Pick random</button><br>
+    <button class="btn btn-primary pull-right" type="button" name="button" ng-hide="recordId" ng-show="currentUser" ng-click="pickRandom()" >Pick random</button><br>
     <button class="btn btn-primary pull-right" type="button" name="button" ng-show="recordId" ng-click="resetRandom()" >Reset</button><br>
   </form>
 
-  <ul ng-repeat="chekin in chekins | filter: { $id:recordId, $:query } | orderBy: order:direction">
+  <ul ng-class="chekin.userState" ng-repeat="chekin in chekins | filter: { $id:recordId, $:query } | orderBy: order:direction">
     <li>
+
       <button class="btn btn-danger" ng-click="deleteChekin(chekin.$id)">Delete</button>
       {{chekin.firstName}} {{chekin.lastName}}
       {{chekin.data | date: "dd MMM, yyyy h:mm a" }}
+      <button class="btn btn-default" ng-click="showLove(chekin)"> <3 </button>
+
+        <div class="text-center" ng-show="chekin.show">
+
+          <form ng-submit = "giveLove(chekin, chekin.giftText)" novalidate name="loveForm">
+            <input type="text" name="giftText" ng-required = "true" ng-model="chekin.giftText">
+            <button class = "btn" type="submit" ng-disabled="loveForm.$invalid">+</button>
+          </form>
+
+          <ul ng-repeat="(key, award) in chekin.awards">
+            <button class="btn btn-danger" ng-click="deleteLove(chekin, key)">delete</button>
+            <li>{{award.name}}</li>
+          </ul>
+
+        </div>
     </li>
   </ul>
+
+
+
 </section>
-;

@@ -52,20 +52,20 @@
       .when('/chekins/:uId/:mId',{
           templateUrl: 'views/chekins.html',
           controller: 'ChekinsController',
-          resolve: {
-            currentAuth: function(Authentication) {
-              return Authentication.requireAuth();
-            }
-          }
+          // resolve: {
+          //   currentAuth: function(Authentication) {
+          //     return Authentication.requireAuth();
+          //   }
+          // }
       })
       .when('/chekins/:uId/:mId/chekinsList',{
           templateUrl: 'views/chekinsList.html',
-          controller: 'ChekinsController',
-          resolve: {
-            currentAuth: function(Authentication) {
-              return Authentication.requireAuth();
-            }
-          }
+          controller: 'ChekinsController'//,
+          // resolve: {
+          //   currentAuth: function(Authentication) {
+          //     return Authentication.requireAuth();
+          //   }
+          // }
       })
       .otherwise({
         redirectTo: '/logedin'

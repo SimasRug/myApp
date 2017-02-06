@@ -37,6 +37,35 @@ myApp.controller('ChekinsController',
       $scope.recordId = '';
     }
 
+    $scope.showLove = function (myChekin) {
+      myChekin.show = !myChekin.show; // cretes a toggle
+
+      if (myChekin.userState == "expanded") {
+        myChekin.userState = '';
+      } else {
+        myChekin.userState = 'expanded';
+      }
+    }
+
+    $scope.giveLove = function(myChekin, giftText) {
+      console.log(myChekin, giftText);
+      var refLove = ref.child(myChekin.$id).child('awards');
+      var chekinsArray = $firebaseArray(refLove);
+
+      chekinsArray.$add({
+        name: giftText,
+        data: firebase.database.ServerValue.TIMESTAMP
+      });
+    }
+
+    $scope.deleteLove = function(myChekin, key) {
+
+      var refLove = ref.child(myChekin.$id).child('awards').child(key);
+      var record = $firebaseObject(refLove);
+      record.$remove(key);
+
+    }
+
     $scope.addCheckin = function() {
       $firebaseArray(ref).$add({
         firstName: $scope.user.firstName,

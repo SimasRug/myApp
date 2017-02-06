@@ -35,3 +35,8 @@ input.ng-touched.ng-invalid {
   text-size:20px;
 }
 .ng-cloak { display: none !important; }
+
+.expanded {
+  background-color: #e6e6e6;
+  /*width: 100%;*/
+}
