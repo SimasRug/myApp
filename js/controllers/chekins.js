@@ -12,6 +12,12 @@ myApp.controller('ChekinsController',
       email: 'test@test.com'
     }
 
+    $scope.order = "data";
+    $scope.direction = 'reverse';
+    $scope.query = '';
+
+    $scope.recordId = '';
+
     $scope.whichMeeting = $routeParams.mId;
     $scope.whichUser = $routeParams.uId;
 
@@ -21,6 +27,15 @@ myApp.controller('ChekinsController',
 
     chekinsList = $firebaseArray(ref);
     $scope.chekins = chekinsList;
+
+    $scope.pickRandom = function() {
+      var whichRecord = Math.round(Math.random() * (chekinsList.length -1 ));
+      $scope.recordId = chekinsList.$keyAt(whichRecord);
+      // console.log($scope.recordId);
+    }
+    $scope.resetRandom = function() {
+      $scope.recordId = '';
+    }
 
     $scope.addCheckin = function() {
       $firebaseArray(ref).$add({
