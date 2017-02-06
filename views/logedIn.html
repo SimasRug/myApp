@@ -1,6 +1,6 @@
 <section>
 
-  <form id="addForm" name="addForm" ng-submit="addMeeting()" novalidate>
+  <form class="text-center" id="addForm" name="addForm" ng-submit="addMeeting()" novalidate>
 
     <h1>Add Meeting</h1>
     <div class="input-group">
@@ -15,12 +15,12 @@
   </form>
 
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 text-left ">
       <div class="meeting" ng-repeat="(key, meeting) in meetings">
-        {{meeting.name}}
-        <button class="btn btn-danger" ng-click="deleteMeeting(key)">Delete</button>
-        <a href="#!/chekins/{{currentUser.regUser}}/{{meeting.$id}}" class="btn btn-primary"> Chekin</a>
-        <a href="#!/chekins/{{currentUser.regUser}}/{{meeting.$id}}/chekinsList" class="btn btn-primary"> Chekins</a>
+        <button class="btn btn-danger" ng-click="deleteMeeting(key)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+        <a href="#!/chekins/{{currentUser.regUser}}/{{meeting.$id}}" class="btn btn-primary"><span class="glyphicon glyphicon-list" aria-hidden="true"></span></a>
+        <a href="#!/chekins/{{currentUser.regUser}}/{{meeting.$id}}/chekinsList" class="btn btn-primary"><span class="glyphicon glyphicon-check" aria-hidden="true"></span></a>
+        | {{meeting.name}}
       </div>
     </div>
   </div>

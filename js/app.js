@@ -51,21 +51,11 @@
       })
       .when('/chekins/:uId/:mId',{
           templateUrl: 'views/chekins.html',
-          controller: 'ChekinsController',
-          // resolve: {
-          //   currentAuth: function(Authentication) {
-          //     return Authentication.requireAuth();
-          //   }
-          // }
+          controller: 'ChekinsController'
       })
       .when('/chekins/:uId/:mId/chekinsList',{
           templateUrl: 'views/chekinsList.html',
-          controller: 'ChekinsController'//,
-          // resolve: {
-          //   currentAuth: function(Authentication) {
-          //     return Authentication.requireAuth();
-          //   }
-          // }
+          controller: 'ChekinsController'
       })
       .otherwise({
         redirectTo: '/logedin'

@@ -4,33 +4,36 @@
 
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
-        <h1 class="display-3">Fill out this form to chekin</h1>
+      Fill out this form to chekin
       </div>
     </div>
+    <div id="chekins">
 
-    <div class="form-group">
-      <label for="firstName">First Name</label>
-      <input type="text" name="firstName" placeholder="First Name" class="form-control"
-       ng-model="user.firstName" ng-required="true" >
-       <p ng-show="addCheckinForm.firstName.$invalid && addCheckinForm.firstName.$touched" class="text-center validationText">First name required</p>
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" name="firstName" placeholder="First Name" class="form-control"
+         ng-model="user.firstName" ng-required="true" >
+         <p ng-show="addCheckinForm.firstName.$invalid && addCheckinForm.firstName.$touched" class="text-center validationText">First name required</p>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">First Name</label>
+        <input type="text" name="lastName" placeholder="Last Name" class="form-control"
+         ng-model="user.lastName" ng-required="true" >
+         <p ng-show="addCheckinForm.lastName.$invalid && addCheckinForm.lastName.$touched" class="text-center validationText">Last name required</p>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Adress</label>
+        <input type="email" name="email" placeholder="Email Adress" class="form-control"
+          ng-model="user.email" ng-required="true">
+        <p ng-show="addCheckinForm.email.$invalid && addCheckinForm.email.$touched" class="text-center validationText"> Must be a valid email</p>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg btn-block"
+      ng-disabled="addCheckinForm.$invalid">Chekin</button>
+
     </div>
-
-    <div class="form-group">
-      <label for="lastName">First Name</label>
-      <input type="text" name="lastName" placeholder="Last Name" class="form-control"
-       ng-model="user.lastName" ng-required="true" >
-       <p ng-show="addCheckinForm.lastName.$invalid && addCheckinForm.lastName.$touched" class="text-center validationText">Last name required</p>
-    </div>
-
-    <div class="form-group">
-      <label for="email">Email Adress</label>
-      <input type="email" name="email" placeholder="Email Adress" class="form-control"
-        ng-model="user.email" ng-required="true">
-      <p ng-show="addCheckinForm.email.$invalid && addCheckinForm.email.$touched" class="text-center validationText"> Must be a valid email</p>
-    </div>
-
-    <button type="submit" class="btn btn-primary btn-lg btn-block"
-    ng-disabled="addCheckinForm.$invalid">Chekin</button>
   </form>
 
 </section>

@@ -42,8 +42,8 @@
   <body class="ng-cloak" >
     <header ng-include="'views/nav.html'"></header>
     <div ng-show="currentUser" ng-controller="RegistrationController">
-      <p>
-        Hi, {{currentUser.firstName}} |<a ng-href="#!/login" ng-click="logout()">logout</a>
+      <p id="loggedUser">
+        Hi, {{currentUser.firstName}} |    <a ng-href="#!/login" ng-click="logout()">logout</a>
       </p>
     </div>
     <main ng-view></main>

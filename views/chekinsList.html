@@ -23,10 +23,10 @@
   <ul ng-class="chekin.userState" ng-repeat="chekin in chekins | filter: { $id:recordId, $:query } | orderBy: order:direction">
     <li>
 
-      <button class="btn btn-danger" ng-click="deleteChekin(chekin.$id)">Delete</button>
+      <button class="btn btn-danger" ng-show="currentUser" ng-click="deleteChekin(chekin.$id)">Delete</button>
       {{chekin.firstName}} {{chekin.lastName}}
       {{chekin.data | date: "dd MMM, yyyy h:mm a" }}
-      <button class="btn btn-default" ng-click="showLove(chekin)"> <3 </button>
+      <button class="btn btn-default"  ng-show="currentUser" ng-click="showLove(chekin)"> <3 </button>
 
         <div class="text-center" ng-show="chekin.show">
 
